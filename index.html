@@ -5,6 +5,7 @@
   <title>Central Sanskrit University | Vedavyas Campus </title>
     <link rel="stylesheet" src="bootstap.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script> 
     $(function(){
       $("#footer").load("footer.html"); 
@@ -220,6 +221,143 @@ background-color: #800000;
     border-top: 1px solid #9a0000;
 }
 
+.marquee {
+  position: relative;
+  animation: marquee 2s linear infinite;
+  text-align:center;
+  color:#ffffff;
+}
+@keyframes marquee {
+  0% {
+    top: 10em
+  }
+  100% {
+    top: -2em
+  }
+}
+
+.blink_me {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a, .dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  border: none;
+  width:100%;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+}
+
+/* On mouse-over */
+.sidenav a:hover, .dropdown-btn:hover {
+  color: #f1f1f1;
+}
+
+/* Main content */
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  padding: 0px 10px;
+}
+
+/* Add an active class to the active dropdown button */
+.active {
+  background-color: green;
+  color: white;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: none;
+  background-color: #f1ebde;
+  color:black;
+}
+
+.dropdown-container a{
+	font-size:1rem;
+  color:black;
+  
+  text-align: left;
+}
+
+.dropdown-container a:hover{
+	background:#8A0F0F;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 70px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+.social{
+	
+}
+.website-counter {
+  height: 50px;
+  width: 80px;
+  color: white;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 25px;
+  margin-top: 10px;
+}
+
+/* Styles for reset button */
+#reset {
+  margin-top: 20px;
+  background-color: #008cba;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 8px 20px;
+  color: white;
+  border: 0;
+}
+
 	</style>
   </head>
 
@@ -229,15 +367,39 @@ background-color: #800000;
 <img src="univ_header.png" alt="header">
 </div>
 <div class="flex">
-<div class="sidemenu">
-	<li class="button-29" >About Us</li>
-	<li class="button-29" >Administration</li>
-	<li class="button-29" >Departments</li>
-	<li class="button-29" >Library</li>
-	<li class="button-29" >Student Corner</li>
-	<li class="button-29" >Distance Education</li>
-	<li class="button-29" >Photo Gallery</li>
-	<li class="button-29" >Student Corner</li>
+
+<div class="sidemenu sidenav">
+  <li class="button-29" >Home</li>
+   <button class="button-29 dropdown-btn sidemenu">E-Resources</button>
+  <div class="dropdown-container">
+    <a href="#">E-Journals</a>
+    <a href="#">E-Books</a>
+    <a href="#">E-Newspaper</a>
+  </div>
+    <button style="margin:5px 0px;" class="button-29 dropdown-btn sidemenu">About Library</button>
+  <div class="dropdown-container">
+    <a href="#">History</a>
+    <a href="#">Library Team Member</a>
+    <a href="#">LDC Member</a>
+  </div>
+    <button class="button-29 dropdown-btn sidemenu">Facilities/Services</button>
+  <div class="dropdown-container">
+    <a href="#">Reprography</a>
+    <a href="#">KOISIC</a>
+    <a href="#">OPAC</a>
+	<a href="#">Membership</a>
+    <a href="#">Inter-Library Loan (ILL)</a>
+    <a href="#">Digital Display Board</a>
+  </div>
+	<li class="button-29" >Collections</li>
+	<li class="button-29" >Web OPAC</li>
+<button class="button-29 dropdown-btn sidemenu">Student Corner</button>
+  <div class="dropdown-container">
+    <a href="#">Previous Year Question Papers</a>
+    <a href="#">Book Requisition Fee</a>
+    <a href="#">No Dues Form</a>
+  </div>
+	<li class="button-29" >Contact Us</li>
 	
 </div>
     <div id="content">
@@ -274,15 +436,25 @@ background-color: #800000;
 	<h2>News and Updates</h2>
 	<hr>
 	<div class="news-list">
-	<li>Online Admissions, 2022 <sup>NEW</sup></li>
-	<hr class="row-design">
-	<li>Entrance Examination for Prak Shastri, 2022 <sup>NEW</sup></li>
-	<hr class="row-design">
+<marquee onmouseover="this.stop();" onmouseout="this.start();" style="height:250px" behavior="scroll" direction="up">
+
+Online Admissions, 2022 <img src="new.gif" class="newicon" alt="new">
+<br>
+<hr class="row-design">
+Entrance Examination for Prak Shastri, 2022 <img src="new.gif" class="newicon" alt="new">
+</marquee>
+<div class="social">
+<h3>Find us on social media</h3>
+<a href="#" class="fa fa-facebook"></a>
+<a href="#" class="fa fa-twitter"></a>
+<a href="#" class="fa fa-youtube"></a>
+	</div></div>
+	
+
 	</div>
 	</div>
-	</div>
 	<hr class="row-design">
-	<h2 style="text-align:center;">OUR BOOKS COLLECTION</h2>
+	<h2 class="blink_me" style="text-align:center;">OUR BOOKS COLLECTION</h2>
 	
 	<div id="container">
 	
@@ -315,6 +487,8 @@ background-color: #800000;
 		</div>
 				
 	<div style="background-color:#212121;border-bottom:#000000 1px solid; " align="center"> <br><br>
+	<div style="color:white;">WEBSITE VISIT COUNT</div>
+   <div class="website-counter"></div>
         <div class="container">
           <ul class="flex"> 
             <li class="col-xs-12 col-md-5 flex" style="width:100%" >
@@ -370,8 +544,49 @@ background-color: #800000;
 	
 	
 	
+		<script>
+	var counterContainer = document.querySelector(".website-counter");
+var resetButton = document.querySelector("#reset");
+var visitCount = localStorage.getItem("page_view");
+
+// Check if page_view entry is present
+if (visitCount) {
+  visitCount = Number(visitCount) + 1;
+  localStorage.setItem("page_view", visitCount);
+} else {
+  visitCount = 1;
+  localStorage.setItem("page_view", 1);
+}
+counterContainer.innerHTML = visitCount;
+
+// Adding onClick event listener
+resetButton.addEventListener("click", () => {
+  visitCount = 1;
+  localStorage.setItem("page_view", 1);
+  counterContainer.innerHTML = visitCount;
+});
+</script>
+<script>
 	
-	<script>
+	
+	
+	//* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
+
+
 let slideIndex = 0;
 showSlides();
 
